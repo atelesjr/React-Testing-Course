@@ -1,9 +1,13 @@
 import { useState } from 'react'
 
+export function replaceCameWithSpaces(colorName) {
+  return colorName.replace(/\B([A-Z])\B/g, ' $1')
+}
+
 function App() {
-  const [ buttonColor, setButtonColor ] = useState('red')
+  const [ buttonColor, setButtonColor ] = useState('MediumVioletRed')
   const [ checkBox, setCheckbox ] = useState(false)
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red'
+  const newButtonColor = buttonColor === 'MediumVioletRed' ? 'MidnightBlue' : 'MediumVioletRed'
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -13,7 +17,7 @@ function App() {
         onClick={ () => setButtonColor(newButtonColor) }
         disabled={checkBox}
       >
-        Change to { newButtonColor }
+        Change to { replaceCameWithSpaces(newButtonColor) }
       </button>
 
       <input
