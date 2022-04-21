@@ -9,7 +9,7 @@ function App() {
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       
       <button 
-        style={{ backgroundColor: buttonColor }}
+        style={{ backgroundColor: checkBox ? 'gray' : buttonColor }}
         onClick={ () => setButtonColor(newButtonColor) }
         disabled={checkBox}
       >
